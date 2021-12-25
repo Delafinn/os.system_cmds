@@ -1,4 +1,6 @@
 
+# Meant to be used in python modules to clear the console.
+
 import os
 
 
