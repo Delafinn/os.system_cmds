@@ -11,7 +11,7 @@ commands = {"exit":"exit the terminal" ,"ip" : "show your ip address in terminal
 
 
 def exit():
-    terminal == "exit"
+    terminal = "exit"
     return os.system(terminal)
 
 
@@ -45,15 +45,19 @@ def top():
     return os.system(terminal)
 
 def systems():
-    terminal = "system_profiler -detailLevel mini"
-    if os.name in ("nt"):
+    terminal = "system_profiler -detailLevel mini" #if on mac
+    if os.name in ("nt"): # if on windows
         terminal = "systeminfo"
         return os.system(terminal)
-    return os.system(terminal)
+    elif sys.platform.startswith("linux"): # if on linxu
+        terminal = "lscpu && uname -a"
+        return os.system(terminal)
+    else:
+        return os.system(terminal)
 
-
+# main program
 print(commands)
-command_question = input("what function/command do you want to call? \n NOTE!!! you can call a command by just the first letter of the displayed command or you can type the matching word.")
+command_question = input("what function/command do you want to call? \n NOTE!!! you can call a command by just the first letter of the displayed command or you can type the matching word.").lower()
 if command_question == "exit":
     exit()
 
