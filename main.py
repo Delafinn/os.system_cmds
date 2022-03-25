@@ -63,22 +63,22 @@ while True:
     if command_question == "exit":
         break
 
-    elif command_question == "ip" or command_question == "i" :
+    elif command_question in ("ip" , "i" ):
         ipconfig()
         time.sleep(4)
 
-    elif command_question == "clear" or command_question == "c" :
+    elif command_question in ("clear" , "c" ):
         clear()
 
-    elif command_question == "hostname" or command_question == "h" :
+    elif command_question in ("hostname" , "h") :
         hostname()
         time.sleep(4)
 
-    elif command_question == "top" or command_question == "t":
+    elif command_question in ("top" , "t"):
         top()
         time.sleep(4)
 
-    elif command_question == "systems" or command_question == "s":
+    elif command_question in ("systems" , "s"):
         systems()
         time.sleep(4)
 
